@@ -1,0 +1,127 @@
+
+	
+	#slideshow ul:before {
+		background-color: rgba(233, 0, 0, 0.7);
+		border-bottom-left-radius: 4px;
+		color: #fff;
+		content: "paused";
+		display: block;
+		font-size: 0.7em;
+		font-weight: 700;
+		right: 0;
+		opacity: 0;
+		padding: 0.2em 0.4em;
+		position: absolute;
+		text-align: center;
+		text-transform: uppercase;
+		top: 0;
+		z-index: 2;
+	}
+	
+	#slideshow ul:hover:before {
+		opacity: 1;
+	}
+	
+	#slideshow ul img {
+		display: block;
+		margin: 0 auto;
+		width: 20%;
+		height: auto;
+		max-height: 200px;
+            min-height: 200px;
+			 border: 2px solid black;
+			
+		
+	}
+	
+	#slideshow ul:hover li,
+	ul:hover img {
+		/* 
+			NOTE: This property is being considered for removal from the spec 
+			@see: http://www.w3.org/TR/css3-animations/#the-animation-play-state-property-
+		*/
+		-webkit-animation-play-state: paused;
+		-moz-animation-play-state: paused;
+	}
+
+#slideshow li {
+	left: 40.5%;
+	list-style: none inside;
+	overflow: hidden;
+	position: absolute;
+	top: 1.9%;
+	width: 97%;
+	height: 40%;
+}
+
+/* - Special styles for the Falling demo - */
+
+
+
+	
+/* - Fade In/Out -*/
+
+#slideshow ul:first-of-type li {
+	-webkit-animation-duration: 12s;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-duration: 12s;
+	-moz-animation-iteration-count: infinite;
+	opacity: 0;
+}
+
+#slideshow ul:first-of-type li:first-child {
+	-webkit-animation-name: fadeOne;
+	-moz-animation-name: fadeOne;
+	opacity: 1;
+}
+
+#slideshow ul:first-of-type li:nth-of-type(2) {
+	-webkit-animation-name: fadeTwo;
+	-moz-animation-name: fadeTwo;
+}
+
+#slideshow ul:first-of-type li:nth-of-type(3) {
+	-webkit-animation-name: fadeThree;
+	-moz-animation-name: fadeThree;
+}
+
+@-webkit-keyframes fadeOne {
+	0%, 30% { opacity: 1; }
+	33%, 94% { opacity: 0; }
+	97%, 100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeTwo {
+	0%, 30% { opacity: 0; }
+	33%, 63% { opacity: 1; }
+	66%, 100% { opacity: 0; }
+}
+
+@-webkit-keyframes fadeThree {
+	0%, 63% { opacity: 0; }
+	66%, 94% { opacity: 1; }
+	97%, 100% { opacity: 0; }
+}
+
+
+@-moz-keyframes fadeOne {
+	0%, 30% { opacity: 1; }
+	33%, 94% { opacity: 0; }
+	97%, 100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeTwo {
+	0%, 30% { opacity: 0; }
+	33%, 63% { opacity: 1; }
+	66%, 100% { opacity: 0; }
+}
+
+@-moz-keyframes fadeThree {
+	0%, 63% { opacity: 0; }
+	66%, 94% { opacity: 1; }
+	97%, 100% { opacity: 0; }
+}
+
+
+
+/* - General page styles -*/
